@@ -7,6 +7,7 @@ Note: You don't need to work on this file for the Assignment.
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
+import './Userprofile.css';
 
 
 class UserProfile extends Component {
@@ -18,15 +19,22 @@ class UserProfile extends Component {
 
       <main className="home-content">
       <div className="profile-card">
-        <h1 className="profile-heading">User Profile</h1>
+        
+        <h1 className="profile-title">User Profile</h1>
 
-        <div className="profile-item">
-          <span className="label">Username: </span> {this.props.userName}</div>
-          <div className="profile-item">
-          <span className="label">Member Since:</span>  {this.props.memberSince}</div>
-  
-          <Link className="profile-link" to="/">← Return to Home</Link>
-      </div>
+        <div className="profile-info">
+              <div className="info-row">
+                <span className="label">Username:</span>
+                <span>{this.props.userName}</span>
+              </div>
+
+              <div className="info-row">
+                <span className="label">Member Since:</span>
+                <span>{this.props.memberSince}</span>
+              </div>
+              </div>
+           
+        </div>
       </main>
       </div>
     );

@@ -5,7 +5,7 @@ The Home component is used to demonstrate the use of Link.
 ==================================================*/
 import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import './Home.css';
 import Navbar from './Navbar';
 
