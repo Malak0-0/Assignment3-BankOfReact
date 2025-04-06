@@ -7,6 +7,7 @@ Note: You don't need to work on this file for the Assignment.
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import './Login.css';
 
 class LogIn extends Component {
   constructor (props) {  // Create and initialize state
