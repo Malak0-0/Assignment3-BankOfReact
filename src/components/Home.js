@@ -7,28 +7,15 @@ import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
 import {Link} from 'react-router-dom';
 import './Home.css';
-import './Navbar.css';
+import Navbar from './Navbar';
+
 
 class Home extends Component {
   render() {
     return (
   
       <div className="home-container">
-        <nav className="navbar">
-
-        <h1>Bank of React</h1>
-        <div className="nav-links">
-
-        <Link to="/userProfile">User Profile</Link>
-     
-        <Link to="/login">Login</Link>
-
-        <Link to="/credits">Credits </Link>
-
-        <Link to="/debits">Debits </Link>
-</div>
-</nav>
-
+              <Navbar /> 
 <main className="home-content">
   <div className="card-container">
     <h2>Welcome back!</h2>

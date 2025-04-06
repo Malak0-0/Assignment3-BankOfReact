@@ -6,12 +6,17 @@ Note: You don't need to work on this file for the Assignment.
 ==================================================*/
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 
 class UserProfile extends Component {
   render() {
     return (
-      <div className="profile-container">
+
+      <div className="home-container"> 
+      <Navbar /> 
+
+      <main className="home-content">
       <div className="profile-card">
         <h1 className="profile-heading">User Profile</h1>
 
@@ -22,6 +27,7 @@ class UserProfile extends Component {
   
           <Link className="profile-link" to="/">← Return to Home</Link>
       </div>
+      </main>
       </div>
     );
   }
