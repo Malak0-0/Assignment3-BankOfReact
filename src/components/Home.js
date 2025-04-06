@@ -22,17 +22,19 @@ class Home extends Component {
      
         <Link to="/login">Login</Link>
 
-        <Link to="/credits">Credits (to be implemented in the Assignment)</Link>
+        <Link to="/credits">Credits </Link>
 
-        <Link to="/debits">Debits (to be implemented in the Assignment)</Link>
+        <Link to="/debits">Debits </Link>
 </div>
 </nav>
 
-          <main className="home-content">
-          <h2>Welcome back! </h2>
+<main className="home-content">
+  <div className="card-container">
+    <h2>Welcome back!</h2>
+    <AccountBalance accountBalance={this.props.accountBalance} />
+  </div>
+</main>
 
-        <AccountBalance accountBalance={this.props.accountBalance}/>
-        </main>
         
       </div>
     );
