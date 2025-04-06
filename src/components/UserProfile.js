@@ -7,16 +7,21 @@ Note: You don't need to work on this file for the Assignment.
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+
 class UserProfile extends Component {
   render() {
     return (
-      <div>
-        <h1>User Profile</h1>
+      <div className="profile-container">
+      <div className="profile-card">
+        <h1 className="profile-heading">User Profile</h1>
 
-        <div>Username: {this.props.userName}</div>
-        <div>Member Since: {this.props.memberSince}</div>
-        <br/>
-        <Link to="/">Return to Home</Link>
+        <div className="profile-item">
+          <span className="label">Username: </span> {this.props.userName}</div>
+          <div className="profile-item">
+          <span className="label">Member Since:</span>  {this.props.memberSince}</div>
+  
+          <Link className="profile-link" to="/">← Return to Home</Link>
+      </div>
       </div>
     );
   }
