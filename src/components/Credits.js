@@ -28,6 +28,24 @@ const Credits = ({ credits, accountBalance, addCredit }) => {
 
 
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const date = new Date().toISOString().slice(0, 10);
+
+  // new credit object
+  const credit = {
+    description: description.trim(),  
+    amount: parseFloat(amount),       
+    date
+  };
+
+  // Call App.js function passed via props
+  addCredit(credit);
+
+  // reset fields
+  setDescription('');
+  setAmount('');
+};
 
 
 
