@@ -7,7 +7,7 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import AccountBalance from './AccountBalance';
-import './Credits.css';
+import './Credit_debit.css';
 import Navbar from './Navbar';
 
 
