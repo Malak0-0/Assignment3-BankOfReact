@@ -47,7 +47,18 @@ const handleSubmit = (e) => {
   setAmount('');
 };
 
-
+// Render credit history to be displayed 
+const renderCredits = () => {
+  return credits.slice().reverse().map((credit) => (
+    <li key={credit.id} className="credit-item">
+      <div className="credit-info">
+        <div className="credit-amount">{credit.amount}</div>
+        <div className="credit-description">{credit.description}</div>
+        <div className="credit-date">{credit.date.slice(0, 10)}</div>
+      </div>
+    </li>
+  ));
+};
 
   return (
     <div>
