@@ -59,6 +59,8 @@ const Debits = ({ debits, accountBalance, addDebit }) => {
       < Navbar/>
       <main className="home-content">
         <div className="credit-card-container">
+        <h1 className="page-title">Debits</h1>
+        <hr className="section-divider" />
           <h2 className="credit-balance-title">
             <AccountBalance accountBalance={accountBalance} />
           </h2>

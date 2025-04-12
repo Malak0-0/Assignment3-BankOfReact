@@ -58,7 +58,11 @@ const renderCredits = () => {
       <Navbar />
 
       <main className="home-content">
+
         <div className="credit-card-container">
+        <h1 className="page-title">Credits</h1>
+        <hr className="section-divider" />
+
           <h2 className="credit-balance-title">
             <AccountBalance accountBalance={accountBalance} />
           </h2>
