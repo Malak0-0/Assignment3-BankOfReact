@@ -27,13 +27,46 @@ class App extends Component {
       }
     };
   }
-
+  async componentDidMount() {
+    try {
+      // Fetch data 
+      const [creditsResponse, debitsResponse] = await Promise.all([
+        fetch('https://johnnylaicode.github.io/api/credits.json'),
+        fetch('https://johnnylaicode.github.io/api/debits.json')
+      ]);
+  
+      const [creditsData, debitsData] = await Promise.all([
+        creditsResponse.json(),
+        debitsResponse.json()
+      ]);
+  
+      // total credits and debits
+      const totalCredits = creditsData.reduce((total, credit) => total + credit.amount, 0);
+      const totalDebits = debitsData.reduce((total, debit) => total + debit.amount, 0);
+  
+      this.setState({
+        creditList: creditsData,
+        debitList: debitsData,
+        accountBalance: totalCredits - totalDebits
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
     newUser.userName = logInInfo.userName;
     this.setState({currentUser: newUser})
   }
+    // Adding new credit & updating balance
+    addCredit = (credit) => {
+      const newCredits = [...this.state.creditList, credit];
+      this.setState({
+        creditList: newCredits,
+        accountBalance: this.state.accountBalance + Number(credit.amount),
+      });
+    };
 
   // Create Routes and React elements to be rendered using React components
   render() {  
