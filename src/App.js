@@ -67,7 +67,14 @@ class App extends Component {
         accountBalance: this.state.accountBalance + Number(credit.amount),
       });
     };
-
+  // updating balance when new debit is added
+  addDebit = (debit) => {
+    const newDebits = [...this.state.debitList, debit];
+    this.setState({
+      debitList: newDebits,
+      accountBalance: this.state.accountBalance - Number(debit.amount),
+    });
+  };
   // Create Routes and React elements to be rendered using React components
   render() {  
     // Create React elements and pass input props to components
