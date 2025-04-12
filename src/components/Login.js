@@ -6,7 +6,9 @@ Note: You don't need to work on this file for the Assignment.
 ==================================================*/
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
+import './Login.css';
+import Navbar from './Navbar';
 
 class LogIn extends Component {
   constructor (props) {  // Create and initialize state
@@ -43,22 +45,28 @@ class LogIn extends Component {
 
     // Render the login form (and call "handleSubmit" method when "Log In" button is clicked to submit form)
     return (
-      <div>
-        <h1>Login</h1>
+
+      <div className="home-container">
+      <Navbar /> 
+      <main className="home-content"> 
+      <div className="card-container login-card">
+            <h2 className="login-heading">Login</h2>
         
-        <form onSubmit={this.handleSubmit}>
-          <div>
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <div  className="form-group">
             <label>User Name</label>
             <input type="text" name="userName" defaultValue={this.props.user.userName} onChange={this.handleChange} />
           </div>
-          <div>
-            <label>Password</label>
+          <div className="form-group">
+                <label>Password</label>
             <input type="password" name="password" />
           </div>
-          <button>Log In</button>
+          <button className="login-button">Log In</button>
         </form>  
-        <br/>
-        <Link to="/">Return to Home</Link>
+   
+       
+      </div>
+      </main>
       </div>
     );
   }
