@@ -7,10 +7,8 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import AccountBalance from './AccountBalance';
-// import './Credits.css';
+import './Credits.css';
 import Navbar from './Navbar';
-
-
 
 
 const Credits = ({ credits, accountBalance, addCredit }) => {
@@ -25,8 +23,6 @@ const Credits = ({ credits, accountBalance, addCredit }) => {
     else if (name === 'amount') setAmount(value);
 
 };
-
-
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -49,16 +45,15 @@ const handleSubmit = (e) => {
 
 // Render credit history to be displayed 
 const renderCredits = () => {
-  return credits.slice().reverse().map((credit) => (
-    <li key={credit.id} className="credit-item">
-      <div className="credit-info">
-        <div className="credit-amount">{credit.amount}</div>
-        <div className="credit-description">{credit.description}</div>
-        <div className="credit-date">{credit.date.slice(0, 10)}</div>
-      </div>
+  return credits.slice().reverse().map((credit, index) => (
+    <li key={index} className="credit-card">
+      <div className="credit-amount">${credit.amount.toFixed(2)}</div>
+      <div className="credit-description">{credit.description}</div>
+      <div className="credit-date">{credit.date.slice(0, 10)}</div>
     </li>
   ));
 };
+
 
   return (
 <div className="home-container">
@@ -67,7 +62,6 @@ const renderCredits = () => {
       <main className="home-content">
         <div className="credit-card-container">
           <h2 className="credit-balance-title">
-            Your Current Balance:
             <AccountBalance accountBalance={accountBalance} />
           </h2>
 
