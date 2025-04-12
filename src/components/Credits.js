@@ -4,11 +4,11 @@ src/components/Credits.js
 The Credits component contains information for Credits page view.
 Note: You need to work on this file for the Assignment.
 ==================================================*/
-//import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
-//import AccountBalance from './AccountBalance';
-import './Credits.css';
-//import Navbar from './Navbar';
+import AccountBalance from './AccountBalance';
+// import './Credits.css';
+import Navbar from './Navbar';
 
 
 
@@ -61,13 +61,58 @@ const renderCredits = () => {
 };
 
   return (
-    <div>
-      <h1>Credits</h1>
-      <br/>
-      <Link to="/">Return to Home</Link>
+<div className="home-container">
+      <Navbar />
+
+      <main className="home-content">
+        <div className="credit-card-container">
+          <h2 className="credit-balance-title">
+            Your Current Balance:
+            <AccountBalance accountBalance={accountBalance} />
+          </h2>
+
+          <form onSubmit={handleSubmit} className="credit-form">
+            <div className="form-row">
+              <label htmlFor="amount" className="form-label">Amount</label>
+              <input
+                type="number"
+                name="amount"
+                id="amount"
+                value={amount}
+                onChange={handleFieldChange}
+                className="form-input"
+                required
+                min="0.01"
+                step="0.01"
+              />
+            </div>
+
+            <div className="form-row">
+              <label htmlFor="description" className="form-label">Description</label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                value={description}
+                onChange={handleFieldChange}
+                className="form-input"
+                required
+              />
+            </div>
+
+            <button type="submit" className="form-button">Add Credit</button>
+          </form>
+
+          <div className="credit-history">
+            <h3>Credit History</h3>
+            <ul className="credit-list">{renderCredits()}</ul>
+          </div>
+
+          <Link className="profile-link" to="/">← Return to Home</Link>
+        </div>
+      </main>
     </div>
   );
 };
-
 
 export default Credits;
