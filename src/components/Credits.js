@@ -7,7 +7,7 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import AccountBalance from './AccountBalance';
-import './Credits.css';
+import './Credit_debit.css';
 import Navbar from './Navbar';
 
 
@@ -58,7 +58,11 @@ const renderCredits = () => {
       <Navbar />
 
       <main className="home-content">
+
         <div className="credit-card-container">
+        <h1 className="page-title">Credits</h1>
+        <hr className="section-divider" />
+
           <h2 className="credit-balance-title">
             <AccountBalance accountBalance={accountBalance} />
           </h2>
