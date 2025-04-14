@@ -5,7 +5,7 @@ The Debits component contains information for Debits page view.
 Note: You need to work on this file for the Assignment.
 ==================================================*/
 import React, { useState } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
 import AccountBalance from './AccountBalance';
 import './Credit_debit.css'; 
@@ -100,6 +100,8 @@ const Debits = ({ debits, accountBalance, addDebit }) => {
             <h3>Debit History</h3>
             <ul className="credit-list">{renderDebits()}</ul>
           </div>
+          <Link className="profile-link" to="/">← Return to Home</Link>
+
         </div>
       </main>
 </div>
